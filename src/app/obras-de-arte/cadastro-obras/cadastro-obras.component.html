@@ -1,0 +1,31 @@
+<h2>{{ acao() }}</h2>
+<mat-card class="obra-card">
+  <mat-card-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Id</mat-label>
+      <input matInput [(ngModel)]="obraDeArte.id" name="id" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Título</mat-label>
+      <input matInput [(ngModel)]="obraDeArte.titulo" name="titulo" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Artista</mat-label>
+      <input matInput [(ngModel)]="obraDeArte.artista" name="artista" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Ano</mat-label>
+      <input matInput [(ngModel)]="obraDeArte.ano" name="ano" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Valor Inicial</mat-label>
+      <input matInput [(ngModel)]="obraDeArte.valorInicial" name="valorInicial" required>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)="manterArte()">
+      <mat-icon>{{ editando ? 'edit' : 'add' }}</mat-icon>
+      {{ editando ? 'Editar' : 'Adicionar' }}
+    </button>
+  </mat-card-actions>
+</mat-card>

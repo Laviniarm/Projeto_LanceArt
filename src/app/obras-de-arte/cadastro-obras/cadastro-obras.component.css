@@ -1,0 +1,34 @@
+.obra-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+mat-form-field {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+button {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #444;
+  font-family: "Candara", sans-serif;
+}
+
+mat-card-actions {
+  justify-content: flex-end;
+}
