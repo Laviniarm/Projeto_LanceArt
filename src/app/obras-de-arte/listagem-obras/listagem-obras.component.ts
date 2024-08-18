@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
-import {Obras} from "../../shared/model/Obras";
-import {Router} from "@angular/router";
-import {ObraDeArte} from "../../shared/model/ObraDeArte";
+import { Obras } from '../../shared/models/Obras';
+import { Router } from '@angular/router';
+import { ObraDeArte } from '../../shared/models/ObraDeArte';
 
 @Component({
   selector: 'app-listagem-obras',
   templateUrl: './listagem-obras.component.html',
-  styleUrl: './listagem-obras.component.css'
+  styleUrl: './listagem-obras.component.css',
 })
 export class ListagemObrasComponent {
-  obras = Obras
+  obras = Obras;
 
-  constructor(private roteador: Router) {
-  }
+  constructor(private roteador: Router) {}
 
   remover(arteARemover: ObraDeArte) {
-    this.obras = this.obras.filter(obraDeArte => obraDeArte.id != arteARemover.id);
+    this.obras = this.obras.filter(
+      (obraDeArte) => obraDeArte.id != arteARemover.id
+    );
   }
 
   editar(arteAEditar: ObraDeArte) {
-    this.roteador.navigate(['editarArte', arteAEditar.id])
+    this.roteador.navigate(['editarArte', arteAEditar.id]);
   }
 }
