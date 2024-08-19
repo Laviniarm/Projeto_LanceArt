@@ -16,9 +16,9 @@ export class ObraDeArteService {
     valorInicial: number,
     imagem: string
   ) {
-    const id = this.obras.length + 1;
+    const id = this.gerarId();
     const novaObra = new ObraDeArte(
-      id.toString(),
+      id,
       titulo,
       artista,
       ano,
@@ -28,15 +28,30 @@ export class ObraDeArteService {
     this.inserir(novaObra);
   }
 
+  private gerarId(): string {
+    return (this.obras.length + 1).toString();
+  }
+
+  private inserir(obra: ObraDeArte) {
+    this.obras.push(obra);
+  }
+
   listarObras() {
     return this.obras;
+  }
+
+  atualizarObra(obra: ObraDeArte) {
+    const index = this.obras.findIndex((o) => o.id === obra.id);
+    if (index !== -1) {
+      this.obras[index] = obra;
+    }
   }
 
   removerObra(obra: ObraDeArte) {
     this.obras = this.obras.filter((obraDeArte) => obraDeArte != obra);
   }
 
-  private inserir(obra: ObraDeArte) {
-    this.obras.push(obra);
+  obraPorId(id: string): ObraDeArte | undefined {
+    return this.obras.find((obra) => obra.id === id);
   }
 }
