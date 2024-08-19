@@ -1,0 +1,10 @@
+{
+  "obraDeArte": [
+    {"id": "1",
+      "titulo":"As flores" ,
+      "artista": "Luana Maria", "ano": 2001,
+      "valorInicial": 2000, "imagem": "assets/imgs/pexels-steve-1145720.jpg"  }
+
+  ]
+
+}

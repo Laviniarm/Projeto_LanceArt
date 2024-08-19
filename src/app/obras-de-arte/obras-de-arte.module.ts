@@ -22,7 +22,7 @@ import { CardObraComponent } from './card-obra/card-obra.component';
   declarations: [
     ListagemObrasComponent,
     CadastroObrasComponent,
-    CardObraComponent,
+    CardObraComponent
   ],
   imports: [
     CommonModule,

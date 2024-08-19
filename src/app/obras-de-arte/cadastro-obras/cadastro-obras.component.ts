@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { OBRAS } from '../../shared/models/OBRAS';
-import { ObraDeArte } from '../../shared/models/ObraDeArte';
-import { ActivatedRoute } from '@angular/router';
+import {Component} from '@angular/core';
+import {ObraDeArte} from '../../shared/models/ObraDeArte';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ObraDeArteService} from "../../shared/services/obra-de-arte.service";
 
 @Component({
   selector: 'app-cadastro-obras',
@@ -9,41 +9,45 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './cadastro-obras.component.css',
 })
 export class CadastroObrasComponent {
-  obras = OBRAS;
   obraDeArte = new ObraDeArte('0', '', '', 0, 0, '');
   editando = false;
 
-  constructor(private rotaAtual: ActivatedRoute) {
+  constructor(private rotaAtual: ActivatedRoute,
+              private obraDeArteService: ObraDeArteService,
+              private roteador: Router) {
     const idArte = this.rotaAtual.snapshot.paramMap.get('id') || undefined;
     if (idArte) {
       this.editando = true;
-      this.obraDeArte = this.obras.filter(
-        (obraDeArte) => obraDeArte.id === idArte
-      )[0];
+      this.obraDeArteService.buscar(idArte).subscribe({
+        next: (ObraR) => {
+          this.obraDeArte = ObraR
+        },
+        error: () => {
+          this.roteador.navigate(['listagemArtes']);
+        }
+      })
     }
   }
 
   manterArte() {
     if (!this.editando) {
-      this.obras.push({
-        id: this.obraDeArte.id,
-        titulo: this.obraDeArte.titulo,
-        artista: this.obraDeArte.artista,
-        ano: this.obraDeArte.ano,
-        valorInicial: this.obraDeArte.valorInicial,
-        imagem: this.obraDeArte.imagem,
-      });
-      this.obraDeArte = {
-        id: '0',
-        titulo: '',
-        artista: '',
-        ano: 0,
-        valorInicial: 0,
-        imagem: '',
-      };
-    } else {
+        this.obraDeArteService.inserir(this.obraDeArte).subscribe(
+          {
+            next: () => {
+            }
+          });
+        this.roteador.navigate(['listagemArtes']);
+      } else {
+      this.obraDeArteService.atualizar(this.obraDeArte).subscribe(
+        {
+          next: () => {
+            this.roteador.navigate(['listagemArtes']);
+          }
+        }
+      )
     }
-  }
+
+   }
 
   acao() {
     return this.editando ? 'Edite sua obra' : 'Cadastre sua obra';

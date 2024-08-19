@@ -2,7 +2,7 @@
   <app-card-obra
     *ngFor="let obra of obras"
     [obra]="obra"
-    (removerDaListagem)="removeDaListagem()"
+    (remover)="remover(obra)"
   ></app-card-obra>
 </div>
 <ng-template #nenhumaObraCadastrada>

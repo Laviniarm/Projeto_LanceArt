@@ -8,23 +8,27 @@ import { ObraDeArteService } from '../../shared/services/obra-de-arte.service';
   templateUrl: './listagem-obras.component.html',
   styleUrl: './listagem-obras.component.css',
 })
-export class ListagemObrasComponent implements OnInit {
+export class ListagemObrasComponent {
   obras: ObraDeArte[] = [];
 
   constructor(
     private roteador: Router,
     private obraDeArteService: ObraDeArteService
-  ) {}
-
-  carregarObras() {
-    this.obras = this.obraDeArteService.listarObras();
+  ) {
+    obraDeArteService.listar().subscribe({
+      next: (obraR) => (this.obras = obraR),
+    });
   }
 
-  ngOnInit(): void {
-    this.carregarObras();
+  remover(obraDeArte: ObraDeArte) {
+    this.obraDeArteService.remover(obraDeArte).subscribe({
+      next: () => {
+        this.obras = this.obras.filter((O) => O.id !== obraDeArte.id);
+      },
+    });
   }
 
-  removeDaListagem() {
-    this.carregarObras();
+  editar(obraAEditar: ObraDeArte) {
+    this.roteador.navigate(['editarArte', obraAEditar.id]);
   }
 }

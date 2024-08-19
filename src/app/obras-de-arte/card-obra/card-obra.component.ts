@@ -10,7 +10,7 @@ import { ObraDeArteService } from '../../shared/services/obra-de-arte.service';
 })
 export class CardObraComponent {
   @Input() obra!: ObraDeArte;
-  @Output() removerDaListagem = new EventEmitter<any>();
+  @Output() remover = new EventEmitter<any>();
   // @Output() editar = new EventEmitter<any>();
 
   constructor(
@@ -19,8 +19,8 @@ export class CardObraComponent {
   ) {}
 
   removerObra() {
-    this.obraDeArteService.removerObra(this.obra);
-    this.removerDaListagem.emit();
+    this.obraDeArteService.remover(this.obra);
+    this.remover.emit();
   }
 
   editar(arteAEditar: ObraDeArte) {
