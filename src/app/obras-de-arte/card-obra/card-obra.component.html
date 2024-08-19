@@ -1,0 +1,24 @@
+<mat-card class="artwork-card">
+  <mat-card-header>
+    <mat-card-title>{{ obra.titulo }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <img [src]="obra.imagem" alt="{{ obra.titulo }}" class="artwork-image" />
+    <p>Artista: {{ obra.artista }}</p>
+    <p>Ano: {{ obra.ano }}</p>
+    <p>
+      Valor inicial:
+      {{ obra.valorInicial }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="actions-container">
+      <button mat-button color="warn" (click)="removerObra()">
+        <mat-icon>delete</mat-icon> Deletar
+      </button>
+      <button mat-button color="primary" (click)="editar(obra)">
+        <mat-icon>edit</mat-icon> Editar
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

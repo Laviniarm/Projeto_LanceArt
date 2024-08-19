@@ -1,0 +1,26 @@
+<header class="container">
+  <img
+    src="assets/imgs/2024-08-12_16-39.png"
+    alt="LanceArt Logo"
+    class="logo"
+  />
+  <nav class="header-right" aria-label="Primary">
+    <button mat-icon-button aria-label="Search">
+      <mat-icon>search</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="User">
+      <mat-icon>person</mat-icon>
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['cadastrarArte']">
+        Cadastrar Arte
+      </button>
+      <button mat-menu-item [routerLink]="['listagemArtes']">
+        Listar Artes
+      </button>
+    </mat-menu>
+  </nav>
+</header>

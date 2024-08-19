@@ -4,15 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
-import{ObrasDeArteModule} from './obras-de-arte/obras-de-arte.module';
-import {MatIcon} from "@angular/material/icon";
-import {MatIconButton} from "@angular/material/button";
+import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
+import { ObrasDeArteModule } from './obras-de-arte/obras-de-arte.module';
+import { MatIcon } from '@angular/material/icon';
+import { MatIconButton } from '@angular/material/button';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,11 +20,9 @@ import {MatIconButton} from "@angular/material/button";
     MatMenu,
     MatMenuItem,
     MatIcon,
-    MatIconButton
+    MatIconButton,
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
