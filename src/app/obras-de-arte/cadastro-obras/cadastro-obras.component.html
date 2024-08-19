@@ -1,9 +1,9 @@
 <h2>{{ acao() }}</h2>
 <mat-card class="obra-card">
   <mat-card-content>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" *ngIf="editando">
       <mat-label>Id</mat-label>
-      <input matInput [(ngModel)]="obraDeArte.id" name="id" required />
+      <input matInput [(ngModel)]="obraDeArte.id" name="id" disabled />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Título</mat-label>

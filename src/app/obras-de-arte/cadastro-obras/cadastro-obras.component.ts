@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { OBRAS } from '../../shared/models/OBRAS';
 import { ObraDeArte } from '../../shared/models/ObraDeArte';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ObraDeArteService } from '../../shared/services/obra-de-arte.service';
 
 @Component({
   selector: 'app-cadastro-obras',
@@ -9,40 +9,37 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './cadastro-obras.component.css',
 })
 export class CadastroObrasComponent {
-  obras = OBRAS;
-  obraDeArte = new ObraDeArte('0', '', '', 0, 0, '');
+  obras: ObraDeArte[] = [];
+  obraDeArte: ObraDeArte;
   editando = false;
 
-  constructor(private rotaAtual: ActivatedRoute) {
+  constructor(
+    private rotaAtual: ActivatedRoute,
+    private obraDeArteService: ObraDeArteService,
+    private roteador: Router
+  ) {
     const idArte = this.rotaAtual.snapshot.paramMap.get('id') || undefined;
-    if (idArte) {
+    if (idArte !== undefined) {
       this.editando = true;
-      this.obraDeArte = this.obras.filter(
-        (obraDeArte) => obraDeArte.id === idArte
-      )[0];
+      this.obraDeArte = this.obraDeArteService.obraPorId(idArte) as ObraDeArte;
+    } else {
+      this.obraDeArte = new ObraDeArte('', '', '', 0, 0, '');
     }
   }
 
   manterArte() {
     if (!this.editando) {
-      this.obras.push({
-        id: this.obraDeArte.id,
-        titulo: this.obraDeArte.titulo,
-        artista: this.obraDeArte.artista,
-        ano: this.obraDeArte.ano,
-        valorInicial: this.obraDeArte.valorInicial,
-        imagem: this.obraDeArte.imagem,
-      });
-      this.obraDeArte = {
-        id: '0',
-        titulo: '',
-        artista: '',
-        ano: 0,
-        valorInicial: 0,
-        imagem: '',
-      };
+      this.obraDeArteService.criarObra(
+        this.obraDeArte.titulo,
+        this.obraDeArte.artista,
+        this.obraDeArte.ano,
+        this.obraDeArte.valorInicial,
+        this.obraDeArte.imagem
+      );
     } else {
+      this.obraDeArteService.atualizarObra(this.obraDeArte);
     }
+    this.roteador.navigate(['/listagemArtes']);
   }
 
   acao() {
