@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Obras } from './shared/models/Obras';
 
 @Component({
   selector: 'app-root',

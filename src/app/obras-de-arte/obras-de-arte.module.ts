@@ -16,9 +16,14 @@ import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatInput } from '@angular/material/input';
+import { CardObraComponent } from './card-obra/card-obra.component';
 
 @NgModule({
-  declarations: [ListagemObrasComponent, CadastroObrasComponent],
+  declarations: [
+    ListagemObrasComponent,
+    CadastroObrasComponent,
+    CardObraComponent,
+  ],
   imports: [
     CommonModule,
     ObrasDeArteRoutingModule,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Obras } from '../../shared/models/Obras';
+import { OBRAS } from '../../shared/models/OBRAS';
 import { ObraDeArte } from '../../shared/models/ObraDeArte';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './cadastro-obras.component.css',
 })
 export class CadastroObrasComponent {
-  obras = Obras;
+  obras = OBRAS;
   obraDeArte = new ObraDeArte('0', '', '', 0, 0, '');
   editando = false;
 
