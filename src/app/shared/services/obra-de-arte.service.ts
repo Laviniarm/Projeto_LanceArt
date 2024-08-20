@@ -1,57 +1,44 @@
 import { Injectable } from '@angular/core';
-import { OBRAS } from '../models/OBRAS';
 import { ObraDeArte } from '../models/ObraDeArte';
+import { HttpClient } from '@angular/common/http';
+import { map, Observable, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ObraDeArteService {
-  private obras = OBRAS;
-  constructor() {}
+  URL_OBRAS = 'http://localhost:3000/obraDeArte';
+  constructor(private httpClient: HttpClient) {}
 
-  criarObra(
-    titulo: string,
-    artista: string,
-    ano: number,
-    valorInicial: number,
-    imagem: string
-  ) {
-    const id = this.gerarId();
-    const novaObra = new ObraDeArte(
-      id,
-      titulo,
-      artista,
-      ano,
-      valorInicial,
-      imagem
+  inserir(obraDeArte: ObraDeArte): Observable<ObraDeArte> {
+    return this.listar().pipe(
+      map((obras) =>
+        obras.length > 0 ? Math.max(...obras.map((o) => +o.id)) + 1 : 1
+      ), // Obtém o próximo ID
+      switchMap((novoId) => {
+        obraDeArte.id = novoId.toString(); // Define o novo ID para a obra de arte
+        return this.httpClient.post<ObraDeArte>(this.URL_OBRAS, obraDeArte);
+      })
     );
-    this.inserir(novaObra);
   }
 
-  private gerarId(): string {
-    return (this.obras.length + 1).toString();
+  remover(obraDeArte: ObraDeArte): Observable<any> {
+    return this.httpClient.delete(`${this.URL_OBRAS}/${obraDeArte.id}`);
   }
 
-  private inserir(obra: ObraDeArte) {
-    this.obras.push(obra);
+  listar(): Observable<ObraDeArte[]> {
+    console.log('Fazendo requisição para listar Obras');
+    return this.httpClient.get<ObraDeArte[]>(this.URL_OBRAS);
   }
 
-  listarObras() {
-    return this.obras;
+  buscar(id: string): Observable<ObraDeArte> {
+    return this.httpClient.get<ObraDeArte>(`${this.URL_OBRAS}/${id}`);
   }
 
-  atualizarObra(obra: ObraDeArte) {
-    const index = this.obras.findIndex((o) => o.id === obra.id);
-    if (index !== -1) {
-      this.obras[index] = obra;
-    }
-  }
-
-  removerObra(obra: ObraDeArte) {
-    this.obras = this.obras.filter((obraDeArte) => obraDeArte != obra);
-  }
-
-  obraPorId(id: string): ObraDeArte | undefined {
-    return this.obras.find((obra) => obra.id === id);
+  atualizar(obraDeArte: ObraDeArte): Observable<ObraDeArte> {
+    return this.httpClient.put<ObraDeArte>(
+      `${this.URL_OBRAS}/${obraDeArte.id}`,
+      obraDeArte
+    );
   }
 }

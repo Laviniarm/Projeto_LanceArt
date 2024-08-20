@@ -1,0 +1,20 @@
+{
+  "obraDeArte": [
+    {
+      "id": "1",
+      "titulo": "As flores",
+      "artista": "Luana Maria",
+      "ano": 2001,
+      "valorInicial": 2000,
+      "imagem": "assets/imgs/pexels-steve-1145720.jpg"
+    },
+    {
+      "id": "3",
+      "titulo": "Cores",
+      "artista": "Lucelia Cunha",
+      "ano": "2022",
+      "valorInicial": "500",
+      "imagem": "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ]
+}

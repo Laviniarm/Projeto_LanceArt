@@ -9,8 +9,7 @@ import { ObraDeArteService } from '../../shared/services/obra-de-arte.service';
   styleUrl: './cadastro-obras.component.css',
 })
 export class CadastroObrasComponent {
-  obras: ObraDeArte[] = [];
-  obraDeArte: ObraDeArte;
+  obraDeArte = new ObraDeArte('0', '', '', 0, 0, '');
   editando = false;
 
   constructor(
@@ -19,27 +18,33 @@ export class CadastroObrasComponent {
     private roteador: Router
   ) {
     const idArte = this.rotaAtual.snapshot.paramMap.get('id') || undefined;
-    if (idArte !== undefined) {
+    if (idArte) {
       this.editando = true;
-      this.obraDeArte = this.obraDeArteService.obraPorId(idArte) as ObraDeArte;
-    } else {
-      this.obraDeArte = new ObraDeArte('', '', '', 0, 0, '');
+      this.obraDeArteService.buscar(idArte).subscribe({
+        next: (ObraR) => {
+          this.obraDeArte = ObraR;
+        },
+        error: () => {
+          this.roteador.navigate(['listagemArtes']);
+        },
+      });
     }
   }
 
   manterArte() {
     if (!this.editando) {
-      this.obraDeArteService.criarObra(
-        this.obraDeArte.titulo,
-        this.obraDeArte.artista,
-        this.obraDeArte.ano,
-        this.obraDeArte.valorInicial,
-        this.obraDeArte.imagem
-      );
+      this.obraDeArteService.inserir(this.obraDeArte).subscribe({
+        next: () => {
+          this.roteador.navigate(['listagemArtes']);
+        },
+      });
     } else {
-      this.obraDeArteService.atualizarObra(this.obraDeArte);
+      this.obraDeArteService.atualizar(this.obraDeArte).subscribe({
+        next: () => {
+          this.roteador.navigate(['listagemArtes']);
+        },
+      });
     }
-    this.roteador.navigate(['/listagemArtes']);
   }
 
   acao() {

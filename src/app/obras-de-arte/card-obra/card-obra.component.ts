@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ObraDeArte } from '../../shared/models/ObraDeArte';
 import { Router } from '@angular/router';
-import { ObraDeArteService } from '../../shared/services/obra-de-arte.service';
 
 @Component({
   selector: 'app-card-obra',
@@ -10,17 +9,12 @@ import { ObraDeArteService } from '../../shared/services/obra-de-arte.service';
 })
 export class CardObraComponent {
   @Input() obra!: ObraDeArte;
-  @Output() removerDaListagem = new EventEmitter<any>();
-  // @Output() editar = new EventEmitter<any>();
+  @Output() remover = new EventEmitter<any>();
 
-  constructor(
-    private roteador: Router,
-    private obraDeArteService: ObraDeArteService
-  ) {}
+  constructor(private roteador: Router) {}
 
   removerObra() {
-    this.obraDeArteService.removerObra(this.obra);
-    this.removerDaListagem.emit();
+    this.remover.emit();
   }
 
   editar(arteAEditar: ObraDeArte) {
