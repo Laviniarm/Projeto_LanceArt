@@ -15,6 +15,14 @@
       "ano": "2022",
       "valorInicial": "500",
       "imagem": "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": "4",
+      "titulo": "Cores",
+      "artista": "Steve Johnson",
+      "ano": "2024",
+      "valorInicial": "450",
+      "imagem": "https://images.pexels.com/photos/1781710/pexels-photo-1781710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ]
 }

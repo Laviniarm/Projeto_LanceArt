@@ -10,9 +10,11 @@ import { MatIcon } from '@angular/material/icon';
 import { MatIconButton } from '@angular/material/button';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CarrosselComponent } from './shared/components/carrossel/carrossel.component';
+import { HomeComponent } from './shared/components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, CarrosselComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

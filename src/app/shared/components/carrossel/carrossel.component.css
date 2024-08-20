@@ -1,0 +1,28 @@
+.item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(90vh - 28px);
+  transition: all 0.5s ease-in-out;
+}
+
+.botoes-controle {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px;
+  padding-bottom: 8px;
+}
+
+.botoes-controle button {
+  background: #dedede;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+}
+
+.botoes-controle button.ativo {
+  background: #464646;
+  cursor: default;
+}

@@ -41,4 +41,10 @@ export class ObraDeArteService {
       obraDeArte
     );
   }
+
+  listarImagens(): Observable<string[]> {
+    return this.httpClient
+      .get<ObraDeArte[]>(this.URL_OBRAS)
+      .pipe(map((obras) => obras.map((obra) => obra.imagem)));
+  }
 }
