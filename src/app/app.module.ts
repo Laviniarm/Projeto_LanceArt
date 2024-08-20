@@ -9,6 +9,7 @@ import { ObrasDeArteModule } from './obras-de-arte/obras-de-arte.module';
 import { MatIcon } from '@angular/material/icon';
 import { MatIconButton } from '@angular/material/button';
 import { HeaderComponent } from './shared/components/header/header.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -21,6 +22,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
     MatMenuItem,
     MatIcon,
     MatIconButton,
+    HttpClientModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

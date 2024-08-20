@@ -19,7 +19,6 @@ export class CardObraComponent {
   ) {}
 
   removerObra() {
-    this.obraDeArteService.remover(this.obra);
     this.remover.emit();
   }
 
