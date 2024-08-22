@@ -3,7 +3,7 @@
   flex-direction: column;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgb(7, 56, 88);
   padding: 0.5rem;
   text-align: center;
   max-width: 350px;
@@ -12,6 +12,7 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-family: Roca one, serif;
+  color: #073858;
 }
 
 .artwork-image {
@@ -25,7 +26,7 @@
   padding-top: 20px;
   margin: 5px 0;
   font-size: 1em;
-  color: #666;
+  color: #090909;
 }
 
 .actions-container {

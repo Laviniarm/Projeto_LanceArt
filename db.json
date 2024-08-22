@@ -18,11 +18,19 @@
     },
     {
       "id": "4",
-      "titulo": "Cores",
+      "titulo": "Cores Vivas",
       "artista": "Steve Johnson",
       "ano": "2024",
       "valorInicial": "450",
       "imagem": "https://images.pexels.com/photos/1781710/pexels-photo-1781710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": "5",
+      "titulo": "",
+      "artista": "",
+      "ano": 0,
+      "valorInicial": 0,
+      "imagem": ""
     }
   ]
 }

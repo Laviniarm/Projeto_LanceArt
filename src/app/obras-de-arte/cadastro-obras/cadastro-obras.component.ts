@@ -48,6 +48,6 @@ export class CadastroObrasComponent {
   }
 
   acao() {
-    return this.editando ? 'Edite sua obra' : 'Cadastre sua obra';
+    return this.editando ? 'Edite sua obra de arte' : 'Cadastre sua obra de arte';
   }
 }
