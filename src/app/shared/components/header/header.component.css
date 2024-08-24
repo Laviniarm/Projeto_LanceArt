@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
+  height: 48px;
+  margin: 0 calc(2vw - 12px) 0 2vw;
 }
 
 .header-right {
@@ -12,8 +13,9 @@
 }
 
 .logo {
-  height: 8vh;
+  height: 80px;
   width: auto;
+  position: absolute;
 }
 
 /* Media Queries */
