@@ -1,7 +1,10 @@
 .item {
   background-size: cover;
   background-repeat: no-repeat;
-  height: calc(90vh - 28px);
+  height: calc(90vh - 38px - 80px);
+  width: 96vw;
+  margin-left: auto;
+  margin-right: auto;
   transition: all 0.5s ease-in-out;
 }
 
@@ -9,20 +12,21 @@
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin-top: 8px;
-  padding-bottom: 8px;
+  align-items: center;
+  margin: 16px;
 }
 
 .botoes-controle button {
   background: #dedede;
   border: none;
-  border-radius: 50%;
+  border-radius: 2px;
   cursor: pointer;
-  height: 12px;
-  width: 12px;
+  height: 6px;
+  width: 24px;
 }
 
 .botoes-controle button.ativo {
-  background: #464646;
+  background: #28526e;
   cursor: default;
+  height: 2px;
 }

@@ -1,3 +1,12 @@
+.titulopag {
+  text-align: center;
+  font-size: 24px;
+  margin: 0px 2vw 32px 2vw;
+  border-bottom: 1px solid;
+  border-color: #28526e;
+  padding-bottom: 16px;
+  color: #28526e;
+}
 
 .container {
   max-width: 1200px;
@@ -15,8 +24,7 @@
 .logo {
   height: 50px;
   width: 150px;
-  height: auto
-
+  height: auto;
 }
 
 .header-right {
@@ -24,4 +32,3 @@
   align-items: center;
   padding: 16px;
 }
-
