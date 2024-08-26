@@ -1,65 +1,67 @@
-<mat-card class="obra-card">
-  <mat-card-content>
-    <div class="leftside">
-      <mat-form-field appearance="fill" *ngIf="editando">
-        <mat-label>Id</mat-label>
-        <input matInput [(ngModel)]="obraDeArte.id" name="id" disabled />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Título</mat-label>
-        <input
-          matInput
-          [(ngModel)]="obraDeArte.titulo"
-          name="titulo"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Artista</mat-label>
-        <input
-          matInput
-          [(ngModel)]="obraDeArte.artista"
-          name="artista"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Ano</mat-label>
-        <input matInput [(ngModel)]="obraDeArte.ano" name="ano" required />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Valor Inicial</mat-label>
-        <input
-          matInput
-          [(ngModel)]="obraDeArte.valorInicial"
-          name="valorInicial"
-          required
-        />
-      </mat-form-field>
-    </div>
-    <div class="rightside">
-      <mat-form-field appearance="fill">
-        <mat-label>Link da Imagem</mat-label>
-        <input
-          matInput
-          [(ngModel)]="obraDeArte.imagem"
-          name="imagem"
-          placeholder="https://exemplo.com/imagem.jpg"
-        />
-      </mat-form-field>
-      <div *ngIf="obraDeArte.imagem" class="imagem-container">
-        <img
-          [src]="obraDeArte.imagem"
-          alt="Pré-visualização da Imagem"
-          class="imagem-obra"
-        />
+<div class="tela">
+  <mat-card class="obra-card">
+    <mat-card-content>
+      <div class="leftside">
+        <mat-form-field appearance="fill" *ngIf="editando">
+          <mat-label>Id</mat-label>
+          <input matInput [(ngModel)]="obraDeArte.id" name="id" disabled />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Título</mat-label>
+          <input
+            matInput
+            [(ngModel)]="obraDeArte.titulo"
+            name="titulo"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Artista</mat-label>
+          <input
+            matInput
+            [(ngModel)]="obraDeArte.artista"
+            name="artista"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Ano</mat-label>
+          <input matInput [(ngModel)]="obraDeArte.ano" name="ano" required />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Valor Inicial</mat-label>
+          <input
+            matInput
+            [(ngModel)]="obraDeArte.valorInicial"
+            name="valorInicial"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Link da Imagem</mat-label>
+          <input
+            matInput
+            [(ngModel)]="obraDeArte.imagem"
+            name="imagem"
+            placeholder="https://exemplo.com/imagem.jpg"
+          />
+        </mat-form-field>
       </div>
-    </div>
-  </mat-card-content>
-  <mat-card-actions align="end">
-    <button mat-raised-button color="Secondary" (click)="manterArte()">
-      <mat-icon>{{ editando ? "edit" : "add" }}</mat-icon>
-      {{ editando ? "Editar" : "Adicionar" }}
-    </button>
-  </mat-card-actions>
-</mat-card>
+      <div class="rightside">
+        <div *ngIf="obraDeArte.imagem" class="imagem-container">
+          <img
+            [src]="obraDeArte.imagem"
+            alt="Pré-visualização da Imagem"
+            class="imagem-obra"
+          />
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="Secondary" (click)="manterArte()">
+        <mat-icon>{{ editando ? "edit" : "add" }}</mat-icon>
+        {{ editando ? "Editar" : "Adicionar" }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

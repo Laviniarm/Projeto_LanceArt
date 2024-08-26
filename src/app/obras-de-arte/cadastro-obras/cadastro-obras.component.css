@@ -1,10 +1,21 @@
+.tela {
+  height: calc(100% - 148px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .obra-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   max-height: calc(100vh - 148px);
-  margin: 2vw 10vw 2vw 10vw;
   padding: 20px;
   border-radius: 12px;
   background: #ffffff;
@@ -36,12 +47,12 @@
   height: 100%;
   max-height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: baseline;
 }
 
 .imagem-container {
   width: 100%;
-  height: 300px; /* Ajuste para a altura desejada */
+  height: 368px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +61,7 @@
 .imagem-obra {
   max-width: 100%;
   max-height: 100%;
-  object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+  object-fit: cover;
 }
 
 mat-form-field {
@@ -65,4 +76,11 @@ button {
 
 mat-card-actions {
   justify-content: flex-end;
+}
+
+/* Media Queries */
+@media screen and (max-width: 860px) {
+  .obra-card mat-card-content {
+    flex-direction: column;
+  }
 }
