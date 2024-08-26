@@ -1,16 +1,33 @@
-.artworks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 0.5rem;
-  padding: 1.5rem;
+.tela-listagem {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 32px;
+  max-width: 90vw;
 }
 
-@media screen and (min-width: 900px) {
-  .artworks-grid {
-    grid-template-columns: repeat(3, 1fr); /* Limita a 3 colunas */
-  }
+.artworks-grid {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+  gap: 24px;
 }
 
 .no-artwork {
   text-align: center;
+}
+
+@media screen and (max-width: 826px) {
+  .artworks-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 360px;
+  }
 }

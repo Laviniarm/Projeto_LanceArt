@@ -74,6 +74,11 @@ button {
   justify-content: center;
 }
 
+.mat-mdc-raised-button:not(:disabled) {
+  background-color: #073858;
+  color: #ffffff;
+}
+
 mat-card-actions {
   justify-content: flex-end;
 }
@@ -82,5 +87,6 @@ mat-card-actions {
 @media screen and (max-width: 860px) {
   .obra-card mat-card-content {
     flex-direction: column;
+    gap: 0;
   }
 }

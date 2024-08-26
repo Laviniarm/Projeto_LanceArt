@@ -1,10 +1,15 @@
-<div class="artworks-grid" *ngIf="obras.length > 0; else nenhumaObraCadastrada">
-  <app-card-obra
-    *ngFor="let obra of obras"
-    [obra]="obra"
-    (remover)="remover(obra)"
-  ></app-card-obra>
+<div class="tela-listagem">
+  <div
+    class="artworks-grid"
+    *ngIf="obras.length > 0; else nenhumaObraCadastrada"
+  >
+    <app-card-obra
+      *ngFor="let obra of obras"
+      [obra]="obra"
+      (remover)="remover(obra)"
+    ></app-card-obra>
+  </div>
+  <ng-template #nenhumaObraCadastrada>
+    <p class="no-artwork">Nenhuma obra de arte cadastrada!</p>
+  </ng-template>
 </div>
-<ng-template #nenhumaObraCadastrada>
-  <p class="no-artwork">Nenhuma obra de arte cadastrada!</p>
-</ng-template>

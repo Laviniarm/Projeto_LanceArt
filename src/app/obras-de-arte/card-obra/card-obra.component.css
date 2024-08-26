@@ -2,43 +2,71 @@
   display: flex;
   flex-direction: column;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgb(7, 56, 88);
+  width: 390px;
+  border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 9px -3px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 2px 2px 9px -3px rgba(0, 0, 0, 0.38);
+  box-shadow: 2px 2px 9px -3px rgba(0, 0, 0, 0.38);
   padding: 0.5rem;
-  text-align: center;
-  max-width: 350px;
+  align-items: center;
 }
+
 .artwork-card mat-card-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-family: Roca one, serif;
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-family: "Lora", serif;
   color: #073858;
+}
+
+.card-textos {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 0;
+  width: 100%;
+}
+
+.artista,
+.valor {
+  font-family: "Lora", serif;
+  margin: 0;
+  margin-top: 8px;
+  color: #073858;
+}
+
+.valor {
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .artwork-image {
   width: 100%;
-  height: 350px;
+  height: 250px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
-.artwork-card p {
-  padding-top: 20px;
-  margin: 5px 0;
-  font-size: 1em;
-  color: #090909;
+.actions {
+  padding: 0;
 }
 
 .actions-container {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  padding: 0.5rem;
-  gap: 1rem;
+  gap: 8px;
+  padding: 16px;
 }
 
-@media screen and (max-width: 768px) {
-  .actions-container {
-    flex-direction: column;
+.actions-container button {
+  background-color: #f5f5f5;
+}
+
+.actions-container button:hover {
+  background-color: #e9eafeda;
+}
+
+@media screen and (max-width: 826px) {
+  .artwork-card {
+    width: 390px;
   }
 }
