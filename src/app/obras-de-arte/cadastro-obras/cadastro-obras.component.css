@@ -9,6 +9,10 @@
   margin-right: auto;
 }
 
+.input-disable {
+  display: none;
+}
+
 .obra-card {
   display: flex;
   flex-direction: column;
@@ -85,8 +89,13 @@ mat-card-actions {
 
 /* Media Queries */
 @media screen and (max-width: 860px) {
+  .tela {
+    justify-content: baseline;
+  }
+
   .obra-card mat-card-content {
     flex-direction: column;
+    height: auto;
     gap: 0;
   }
 }

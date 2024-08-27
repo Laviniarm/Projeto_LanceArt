@@ -2,7 +2,11 @@
   <mat-card class="obra-card">
     <mat-card-content>
       <div class="leftside">
-        <mat-form-field appearance="fill" *ngIf="editando">
+        <mat-form-field
+          class="input-disable"
+          appearance="fill"
+          *ngIf="editando"
+        >
           <mat-label>Id</mat-label>
           <input matInput [(ngModel)]="obraDeArte.id" name="id" disabled />
         </mat-form-field>
