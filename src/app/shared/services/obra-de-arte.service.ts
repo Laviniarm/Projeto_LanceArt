@@ -14,9 +14,9 @@ export class ObraDeArteService {
     return this.listar().pipe(
       map((obras) =>
         obras.length > 0 ? Math.max(...obras.map((o) => +o.id)) + 1 : 1
-      ), // Obtém o próximo ID
+      ),
       switchMap((novoId) => {
-        obraDeArte.id = novoId.toString(); // Define o novo ID para a obra de arte
+        obraDeArte.id = novoId.toString();
         return this.httpClient.post<ObraDeArte>(this.URL_OBRAS, obraDeArte);
       })
     );
