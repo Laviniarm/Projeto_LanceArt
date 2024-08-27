@@ -1,27 +1,50 @@
 # ProjetoLanceArt
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+Este é um projeto desenvolvido para a disciplina de Programação Web 1 do Instituto Federal da Paraíba (IFPB). O projeto consiste em uma aplicação Angular que permite a inserção e listagem de itens em um sistema de galeria de arte, simulando um e-commerce. É possível adicionar novas artes, alterar, remover e visualizar a lista de artes cadastradas.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Inserção de Artes**: Os usuários podem adicionar novas artes à galeria, incluindo detalhes como título, autor e preço.
+- **Listagem de Artes**: Todas as artes adicionadas são listadas em uma página dedicada, onde é possível visualizar os detalhes de cada item.
+- **Edição de Arte**: É possível alterar o título, artista e preço, não sendo possível editar apenas o ID da arte.
+- **Backend Simulado com json-server**: Os dados das artes são armazenados e servidos usando o json-server, permitindo simulação completa de um backend.
 
-## Code scaffolding
+## Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: Framework utilizado para a construção da interface e gerenciamento do estado da aplicação.
+- **Angular Material**: Biblioteca de componentes para Angular, utilizada para criar uma interface de usuário agradável e responsiva.
+- **json-server**: Ferramenta usada para simular um backend, armazenando e servindo os dados em formato JSON.
 
-## Build
+## Estrutura do Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+O projeto segue uma estrutura básica de um aplicativo Angular, com componentes dedicados para a inserção e listagem de artes.
 
-## Running unit tests
+- **Componente de Inserção**: Permite que os usuários adicionem novas artes à galeria.
+- **Componente de Listagem**: Exibe todas as artes disponíveis na galeria.
+- **Componente de Card**: É possível visualizar a arte, editar ou remove-la.
+- **Serviços**: Utilizados para comunicação com o json-server e gerenciamento dos dados.
+  Aqui está o trecho modificado do README para refletir a alteração que fizemos, onde basta rodar `npm start` para iniciar tanto o `json-server` quanto o Angular:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## Como Executar
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Clonar o Repositório**: Clone o repositório do GitHub em sua máquina local.
+   ```bash
+   git clone https://github.com/Laviniarm/Projeto_LanceArt
+   ```
+2. **Instalar Dependências**: Navegue até o diretório do projeto e instale as dependências necessárias.
+   ```bash
+   cd Projeto_LanceArt
+   npm install
+   ```
+3. **Iniciar a Aplicação**: Inicie tanto o `json-server` quanto a aplicação Angular simultaneamente.
+   ```bash
+   npm start
+   ```
+4. **Acessar a Aplicação**: Abra o navegador e acesse `http://localhost:4200`.
 
-## Further help
+## Links Importantes
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Link do Stackblitz**: [Stackblitz Project](https://stackblitz.com/~/github.com/Laviniarm/Projeto_LanceArt)
+- **Link do GitHub**: [GitHub Repository](https://github.com/Laviniarm/Projeto_LanceArt)
