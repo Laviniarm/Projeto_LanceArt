@@ -7,19 +7,25 @@ import { map, Observable, switchMap } from 'rxjs';
   providedIn: 'root',
 })
 export class ObraDeArteService {
-  URL_OBRAS = 'http://localhost:3000/obraDeArte';
+  //URL_OBRAS = 'http://localhost:3000/obraDeArte';
+  URL_OBRAS = 'http://localhost:8080/obras';
+
   constructor(private httpClient: HttpClient) {}
 
+  // inserir(obraDeArte: ObraDeArte): Observable<ObraDeArte> {
+  //   return this.listar().pipe(
+  //     map((obras) =>
+  //       obras.length > 0 ? Math.max(...obras.map((o) => +o.id)) + 1 : 1
+  //     ),
+  //     switchMap((novoId) => {
+  //       obraDeArte.id = novoId.toString();
+  //       return this.httpClient.post<ObraDeArte>(this.URL_OBRAS, obraDeArte);
+  //     })
+  //   );
+  // }
+
   inserir(obraDeArte: ObraDeArte): Observable<ObraDeArte> {
-    return this.listar().pipe(
-      map((obras) =>
-        obras.length > 0 ? Math.max(...obras.map((o) => +o.id)) + 1 : 1
-      ),
-      switchMap((novoId) => {
-        obraDeArte.id = novoId.toString();
-        return this.httpClient.post<ObraDeArte>(this.URL_OBRAS, obraDeArte);
-      })
-    );
+    return this.httpClient.post<ObraDeArte>(this.URL_OBRAS, obraDeArte);
   }
 
   remover(obraDeArte: ObraDeArte): Observable<any> {

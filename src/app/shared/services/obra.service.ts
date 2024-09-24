@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+// @ts-ignore
 import { OBRAS } from '../models/OBRAS';
 import { ObraDeArte } from '../models/ObraDeArte';
 
