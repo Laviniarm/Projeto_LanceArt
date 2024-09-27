@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
   // { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
-  // { path: '**', redirectTo: '/auth/login' } //
+  // { path: '**', redirectTo: '/auth/login' }
 
 ];
 

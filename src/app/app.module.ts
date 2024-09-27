@@ -12,10 +12,11 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarrosselComponent } from './shared/components/carrossel/carrossel.component';
 import { HomeComponent } from './shared/components/home/home.component';
-import {FirestoreModule} from "@angular/fire/firestore";
 import { AuthModule } from './auth/auth.module';
 import {AuthRoutingModule} from "./auth/auth-routing.module";
-import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {FirestoreModule} from "@angular/fire/firestore";
+import {AngularFireModule} from "@angular/fire/compat";
+import {firebaseConfig} from "../firebase.config";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, CarrosselComponent, HomeComponent],
@@ -30,9 +31,10 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
     MatIconButton,
     HttpClientModule,
     FirestoreModule,
-    // AuthModule,
-    // AuthRoutingModule,
-    // AngularFireAuthModule
+    AuthModule,
+    AuthRoutingModule,
+    AngularFireModule.initializeApp(firebaseConfig)
+
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
