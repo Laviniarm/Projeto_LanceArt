@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/components/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }, // Página inicial
+  { path: '', component: HomeComponent },
+  //{ path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  //{ path: '', redirectTo: '/auth/login', pathMatch: 'full' }// Página inicial
 ];
 
 @NgModule({

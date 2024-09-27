@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';;
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,10 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarrosselComponent } from './shared/components/carrossel/carrossel.component';
 import { HomeComponent } from './shared/components/home/home.component';
+import {FirestoreModule} from "@angular/fire/firestore";
+import { AuthModule } from './auth/auth.module';
+import {AuthRoutingModule} from "./auth/auth-routing.module";
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, CarrosselComponent, HomeComponent],
@@ -25,6 +29,10 @@ import { HomeComponent } from './shared/components/home/home.component';
     MatIcon,
     MatIconButton,
     HttpClientModule,
+    FirestoreModule,
+    // AuthModule,
+    // AuthRoutingModule,
+    // AngularFireAuthModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

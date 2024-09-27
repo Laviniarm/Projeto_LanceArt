@@ -6,7 +6,7 @@ import { CadastroObrasComponent } from './cadastro-obras/cadastro-obras.componen
 const routes: Routes = [
   { path: 'listagemArtes', component: ListagemObrasComponent },
   { path: 'cadastrarArte', component: CadastroObrasComponent },
-  { path: 'editarArte/:id', component: CadastroObrasComponent },
+  { path: 'editarArte/:id', component: CadastroObrasComponent }
 ];
 
 @NgModule({
