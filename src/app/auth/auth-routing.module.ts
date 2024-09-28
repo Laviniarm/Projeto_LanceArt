@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./login/login.component";
-import {CadastroComponent} from "./cadastro/cadastro.component";
+import { LoginComponent } from './login/login.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'cadastro', component: CadastroComponent },
-  // { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
-  // { path: '**', redirectTo: '/auth/login' }
-
+  { path: 'auth/login', component: LoginComponent },
+  { path: 'auth/cadastro', component: CadastroComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {}
