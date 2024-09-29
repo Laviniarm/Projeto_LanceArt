@@ -1,21 +1,46 @@
 <div class="cadastro-container">
   <h2>Cadastro</h2>
-  <form (ngSubmit)="cadastrar()">
-    <div>
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" [(ngModel)]="nome" name="nome" required>
-    </div>
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" [(ngModel)]="email" name="email" required>
-    </div>
-    <div>
-      <label for="senha">Senha:</label>
-      <input type="password" id="senha" [(ngModel)]="senha" name="senha" required>
-    </div>
-    <div>
-      <button type="submit">Cadastrar</button>
+  <form (ngSubmit)="cadastrar()" class="cadastro-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input
+        matInput
+        type="text"
+        id="nome"
+        [(ngModel)]="nome"
+        name="nome"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        id="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input
+        matInput
+        type="password"
+        id="senha"
+        [(ngModel)]="senha"
+        name="senha"
+        required
+      />
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit">Cadastrar</button>
     </div>
   </form>
+
   <p>Já tem uma conta? <a routerLink="/auth/login">Entrar</a></p>
 </div>

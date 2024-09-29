@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';;
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,15 +11,14 @@ import { MatIconButton } from '@angular/material/button';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarrosselComponent } from './shared/components/carrossel/carrossel.component';
-import { HomeComponent } from './shared/components/home/home.component';
 import { AuthModule } from './auth/auth.module';
-import {AuthRoutingModule} from "./auth/auth-routing.module";
-import {FirestoreModule} from "@angular/fire/firestore";
-import {AngularFireModule} from "@angular/fire/compat";
-import {firebaseConfig} from "../firebase.config";
+import { AuthRoutingModule } from './auth/auth-routing.module';
+import { FirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { firebaseConfig } from '../firebase.config';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CarrosselComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, CarrosselComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,8 +32,7 @@ import {firebaseConfig} from "../firebase.config";
     FirestoreModule,
     AuthModule,
     AuthRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig)
-
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
