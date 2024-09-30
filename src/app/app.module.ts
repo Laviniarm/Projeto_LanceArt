@@ -16,7 +16,7 @@ import { AuthModule } from './auth/auth.module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
-import { firebaseConfig } from '../../firebase.config';
+import { firebaseConfig } from './firestore/firebase.config';
 import { ListagemGeralComponent } from './shared/components/listagem-geral/listagem-geral.component';
 import { MatCardModule, MatCard } from '@angular/material/card';
 import { ErroInterceptor } from './ErroInterceptor';
