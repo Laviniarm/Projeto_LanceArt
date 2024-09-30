@@ -8,3 +8,14 @@ body {
   margin: 0;
   font-family: "Lora", serif;
 }
+
+.snackbar-sucesso {
+  background-color: #4caf50;
+  color: white;
+}
+
+
+.snackbar-erro {
+  background-color: #f44336;
+  color: white;
+}

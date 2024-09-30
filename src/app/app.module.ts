@@ -9,13 +9,14 @@ import { ObrasDeArteModule } from './obras-de-arte/obras-de-arte.module';
 import { MatIcon } from '@angular/material/icon';
 import { MatIconButton } from '@angular/material/button';
 import { HeaderComponent } from './shared/components/header/header.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { CarrosselComponent } from './shared/components/carrossel/carrossel.component';
 import { AuthModule } from './auth/auth.module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { firebaseConfig } from '../firebase.config';
+import {ErroInterceptor} from "./ErroInterceptor";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, CarrosselComponent],
@@ -32,9 +33,12 @@ import { firebaseConfig } from '../firebase.config';
     FirestoreModule,
     AuthModule,
     AuthRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErroInterceptor, multi: true },
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
