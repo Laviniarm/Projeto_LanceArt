@@ -11,11 +11,9 @@ export class ErroInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
-        // Verifica se é um erro do servidor
         if (error.status === 0) {
           this.mensagemService.MensagemErro('Erro de conexão com o servidor.');
         } else {
-          // Exibe a mensagem de erro
           const mensagemErro = error.error.message || 'Erro inesperado.';
           this.mensagemService.MensagemErro(mensagemErro);
         }

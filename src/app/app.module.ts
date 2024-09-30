@@ -20,6 +20,7 @@ import { firebaseConfig } from '../firebase.config';
 import { ListagemGeralComponent } from './shared/components/listagem-geral/listagem-geral.component';
 import { MatCardModule, MatCard } from '@angular/material/card';
 import {ErroInterceptor} from "./ErroInterceptor";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {ErroInterceptor} from "./ErroInterceptor";
     AngularFireModule.initializeApp(firebaseConfig),
     MatCard,
     MatCardModule,
+    FormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErroInterceptor, multi: true },

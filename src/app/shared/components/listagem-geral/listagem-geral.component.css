@@ -1,33 +1,49 @@
+/* listagem-geral.component.css */
 .tela-listagem {
-  display: flex;
-  flex-direction: column;
-  justify-content: baseline;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 32px;
-  max-width: 90vw;
+  padding: 16px;
 }
+
 
 .artworks-grid {
   display: grid;
-  width: 100%;
-  margin: 0 auto;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
 }
 
-.no-artwork {
-  text-align: center;
+.artwork-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@media screen and (max-width: 826px) {
-  .artworks-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-width: 360px;
-  }
+.artwork-image {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card-textos {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Espaçamento entre os elementos */
+}
+
+.input-lance {
+  width: 100%; /* Ocupa toda a largura do card */
+  max-width: 300px; /* Limita a largura máxima */
+}
+
+/* Estilos para o botão */
+button {
+  align-self: center;
+  color: white;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: #073858;
+}
+button:hover {
+  background-color: rgba(125, 211, 246, 0.78); /* Cor ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
 }

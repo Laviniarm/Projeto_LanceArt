@@ -17,7 +17,7 @@ export class MensagemService {
 
   MensagemErro(mensagem: string): void {
     this.snackBar.open(mensagem, 'Fechar', {
-      duration: 5000,
+      duration: 3000,
       panelClass: ['snackbar-erro']
     });
   }
