@@ -1,0 +1,28 @@
+<div class="tela-listagem">
+  <h2>Obras</h2>
+  <div
+    class="artworks-grid"
+    *ngIf="obras && obras.length > 0; else nenhumaObraCadastrada"
+  >
+    <mat-card class="artwork-card" *ngFor="let obra of obras">
+      <mat-card-header>
+        <mat-card-title>{{ obra.titulo }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <img
+          [src]="obra.imagem"
+          alt="{{ obra.titulo }}"
+          class="artwork-image"
+        />
+        <div class="card-textos">
+          <p class="artista">{{ obra.artista }}, {{ obra.ano }}</p>
+          <p class="valor">R$ {{ obra.valorInicial }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <ng-template #nenhumaObraCadastrada>
+    <p class="no-artwork">Nenhuma obra de arte cadastrada!</p>
+  </ng-template>
+</div>

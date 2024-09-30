@@ -14,26 +14,14 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  // login() {
-  //   if (this.email && this.senha) {
-  //     this.usuarioService.pesquisarPorEmailSenha(this.email, this.senha).subscribe(usuario => {
-  //       if (usuario) {
-  //         console.log('Login bem-sucedido!');
-  //         this.router.navigate(['/home']);
-  //       } else {
-  //         console.log('Credenciais inválidas');
-  //       }
-  //     });
-  //   } else {
-  //     console.log('Preencha todos os campos!');
-  //   }
-  // }
   login() {
     if (this.email && this.senha) {
       this.authService.login(this.email, this.senha).subscribe(
         (usuario) => {
           if (usuario) {
             console.log('Login bem-sucedido!');
+            console.log('1 2 3...');
+            console.log(usuario.id);
             this.router.navigate(['/home']);
           } else {
             console.log('Credenciais inválidas');

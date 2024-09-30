@@ -5,9 +5,10 @@ import { LoginComponent } from './auth/login/login.component';
 import { CadastroComponent } from './auth/cadastro/cadastro.component';
 import { CadastroObrasComponent } from './obras-de-arte/cadastro-obras/cadastro-obras.component';
 import { authGuard } from './shared/guards/auth.guard';
+import { HomeComponent } from './shared/components/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/cadastro', component: CadastroComponent },
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
     component: CadastroObrasComponent,
     canActivate: [authGuard],
   },
-  // { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
 ];
 
 @NgModule({

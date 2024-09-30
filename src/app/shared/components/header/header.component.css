@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 48px;
-  margin: 0 calc(2vw - 12px) 0 2vw;
+  height: 15%;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
 }
-
 .header-right {
   display: flex;
   align-items: center;
@@ -15,7 +15,15 @@
 .logo {
   height: 80px;
   width: auto;
-  position: absolute;
+}
+
+.titulopag {
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 1px solid;
+  border-color: #073858;
+  padding-bottom: 16px;
+  color: #073858;
 }
 
 /* Media Queries */

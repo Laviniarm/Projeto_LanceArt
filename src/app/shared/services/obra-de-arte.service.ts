@@ -7,7 +7,6 @@ import { map, Observable, switchMap } from 'rxjs';
   providedIn: 'root',
 })
 export class ObraDeArteService {
-  //URL_OBRAS = 'http://localhost:3000/obraDeArte';
   URL_OBRAS = 'http://localhost:8080/obras';
 
   constructor(private httpClient: HttpClient) {}
@@ -52,5 +51,9 @@ export class ObraDeArteService {
     return this.httpClient
       .get<ObraDeArte[]>(this.URL_OBRAS)
       .pipe(map((obras) => obras.map((obra) => obra.imagem)));
+  }
+
+  listarPorUsuarioId(usuarioId: String): Observable<ObraDeArte[]> {
+    return this.httpClient.get<ObraDeArte[]>(`usuario/${usuarioId}`);
   }
 }
