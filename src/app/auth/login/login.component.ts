@@ -21,7 +21,7 @@ export class LoginComponent {
         (usuario) => {
           if (usuario) {
             this.mensagemService.MensagemSucesso('Login bem-sucedido!');
-            this.router.navigate(['/home']);
+            this.router.navigate(['/listagemArtes']);
           } else {
             this.mensagemService.MensagemErro('Credenciais inválidas');
           }

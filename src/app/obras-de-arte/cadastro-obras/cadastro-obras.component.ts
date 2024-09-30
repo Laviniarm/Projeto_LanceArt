@@ -3,6 +3,7 @@ import { ObraDeArte } from '../../shared/models/ObraDeArte';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ObraDeArteService } from '../../shared/services/obra-de-arte.service';
 import {MensagemService} from "../../shared/services/mensagem.service";
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-cadastro-obras',
@@ -10,12 +11,13 @@ import {MensagemService} from "../../shared/services/mensagem.service";
   styleUrl: './cadastro-obras.component.css',
 })
 export class CadastroObrasComponent {
-  obraDeArte = new ObraDeArte('0', '', '', 0, 0, '');
+  obraDeArte = new ObraDeArte('0', '', '', 0, 0, '', ''); // Remover ID numérico
   editando = false;
 
   constructor(
     private rotaAtual: ActivatedRoute,
     private obraDeArteService: ObraDeArteService,
+    private authService: AuthService,
     private roteador: Router,
     private mensagemService: MensagemService
   ) {
@@ -35,6 +37,17 @@ export class CadastroObrasComponent {
   }
 
   manterArte() {
+    const usuarioAtual = this.authService.getCurrentUser(); // Obtenha o usuário autenticado
+
+    console.log(usuarioAtual.id);
+
+    if (!usuarioAtual) {
+      console.error('Usuário não autenticado');
+      return;
+    }
+
+    this.obraDeArte.usuarioId = usuarioAtual.id; // Atribui o ID do usuário autenticado
+
     if (!this.editando) {
       this.obraDeArteService.inserir(this.obraDeArte).subscribe({
         next: () => {
@@ -59,6 +72,8 @@ export class CadastroObrasComponent {
   }
 
   acao() {
-    return this.editando ? 'Edite sua obra de arte' : 'Cadastre sua obra de arte';
+    return this.editando
+      ? 'Edite sua obra de arte'
+      : 'Cadastre sua obra de arte';
   }
 }

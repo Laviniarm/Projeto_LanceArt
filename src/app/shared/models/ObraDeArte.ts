@@ -5,6 +5,7 @@ export class ObraDeArte {
     public artista: string,
     public ano: number,
     public valorInicial: number,
-    public imagem: string) {
-  }
+    public imagem: string,
+    public usuarioId: string
+  ) {}
 }
