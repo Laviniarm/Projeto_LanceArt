@@ -10,17 +10,17 @@ import { MatIcon } from '@angular/material/icon';
 import { MatIconButton } from '@angular/material/button';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HomeComponent } from './shared/components/home/home.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CarrosselComponent } from './shared/components/carrossel/carrossel.component';
 import { AuthModule } from './auth/auth.module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
-import { firebaseConfig } from '../firebase.config';
+import { firebaseConfig } from '../../firebase.config';
 import { ListagemGeralComponent } from './shared/components/listagem-geral/listagem-geral.component';
 import { MatCardModule, MatCard } from '@angular/material/card';
-import {ErroInterceptor} from "./ErroInterceptor";
-import {FormsModule} from "@angular/forms";
+import { ErroInterceptor } from './ErroInterceptor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,7 @@ import {FormsModule} from "@angular/forms";
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErroInterceptor, multi: true },
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent],
 })
