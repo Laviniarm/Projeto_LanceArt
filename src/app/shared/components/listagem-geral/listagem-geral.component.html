@@ -9,14 +9,13 @@
         <mat-card-title>{{ obra.titulo }}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <img
-          [src]="obra.imagem"
-          alt="{{ obra.titulo }}"
-          class="artwork-image"
-        />
+        <img [src]="obra.imagem" alt="{{ obra.titulo }}" class="artwork-image" />
         <div class="card-textos">
           <p class="artista">{{ obra.artista }}, {{ obra.ano }}</p>
-          <p class="valor">R$ {{ obra.valorInicial }}</p>
+          <p class="valor">R$ {{ obra.valorInicial | currency }}</p>
+          <p> Dar um Lance: </p>
+          <input type="number" class="input-lance" [(ngModel)]="lance[obra.id]" placeholder="Digite seu lance" />
+          <button (click)="darLance(obra.id)">Dar Lance</button>
         </div>
       </mat-card-content>
     </mat-card>

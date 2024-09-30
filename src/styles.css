@@ -8,3 +8,38 @@ body {
   margin: 0;
   font-family: "Lora", serif;
 }
+
+.snackbar-sucesso {
+  background-color: #4caf50 !important;  /* Verde para sucesso */
+  color: white; /* Texto branco */
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.snackbar-erro {
+  background-color: #f44336 !important;  /* Vermelho para erro */
+  color: white;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.snackbar-sucesso::before,
+.snackbar-erro::before {
+  content: '';
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.snackbar-sucesso::before {
+  content: '✔️';
+}
+
+.snackbar-erro::before {
+  content: '❌';
+}
