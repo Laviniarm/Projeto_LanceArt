@@ -11,18 +11,6 @@ export class ObraDeArteService {
 
   constructor(private httpClient: HttpClient) {}
 
-  // inserir(obraDeArte: ObraDeArte): Observable<ObraDeArte> {
-  //   return this.listar().pipe(
-  //     map((obras) =>
-  //       obras.length > 0 ? Math.max(...obras.map((o) => +o.id)) + 1 : 1
-  //     ),
-  //     switchMap((novoId) => {
-  //       obraDeArte.id = novoId.toString();
-  //       return this.httpClient.post<ObraDeArte>(this.URL_OBRAS, obraDeArte);
-  //     })
-  //   );
-  // }
-
   inserir(obraDeArte: ObraDeArte): Observable<ObraDeArte> {
     return this.httpClient.post<ObraDeArte>(this.URL_OBRAS, obraDeArte);
   }
@@ -54,6 +42,8 @@ export class ObraDeArteService {
   }
 
   listarPorUsuarioId(usuarioId: String): Observable<ObraDeArte[]> {
-    return this.httpClient.get<ObraDeArte[]>(`usuario/${usuarioId}`);
+    return this.httpClient.get<ObraDeArte[]>(
+      `${this.URL_OBRAS}/usuario/${usuarioId}`
+    );
   }
 }

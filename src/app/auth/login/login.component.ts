@@ -19,10 +19,8 @@ export class LoginComponent {
       this.authService.login(this.email, this.senha).subscribe(
         (usuario) => {
           if (usuario) {
-            console.log('Login bem-sucedido!');
-            console.log('1 2 3...');
-            console.log(usuario.id);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/listagemArtes']);
+            // this.router.navigate(['/cadastrarArte']);
           } else {
             console.log('Credenciais inválidas');
           }
