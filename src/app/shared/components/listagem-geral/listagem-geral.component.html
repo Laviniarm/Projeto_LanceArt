@@ -9,18 +9,35 @@
         <mat-card-title>{{ obra.titulo }}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <img [src]="obra.imagem" alt="{{ obra.titulo }}" class="artwork-image" />
+        <img
+          [src]="obra.imagem"
+          alt="{{ obra.titulo }}"
+          class="artwork-image"
+        />
         <div class="card-textos">
           <p class="artista">{{ obra.artista }}, {{ obra.ano }}</p>
           <p class="valor">R$ {{ obra.valorInicial | currency }}</p>
-          <p> Dar um Lance: </p>
-          <input type="number" class="input-lance" [(ngModel)]="lance[obra.id]" placeholder="Digite seu lance" />
-          <button (click)="darLance(obra.id)">Dar Lance</button>
+        </div>
+        <div class="card-lance">
+          <!-- Usando mat-form-field e matInput para o input de lance -->
+          <mat-form-field appearance="outline" class="input-lance">
+            <mat-label>Digite seu lance</mat-label>
+            <input
+              matInput
+              type="number"
+              [(ngModel)]="lance[obra.id]"
+              placeholder="Digite seu lance"
+            />
+          </mat-form-field>
+
+          <!-- Usando mat-button para o botão -->
+          <button mat-raised-button class="button" (click)="darLance(obra.id)">
+            Dar Lance
+          </button>
         </div>
       </mat-card-content>
     </mat-card>
   </div>
-
   <ng-template #nenhumaObraCadastrada>
     <p class="no-artwork">Nenhuma obra de arte cadastrada!</p>
   </ng-template>
