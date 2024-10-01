@@ -1,49 +1,92 @@
-/* listagem-geral.component.css */
 .tela-listagem {
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 32px;
+  max-width: 90vw;
 }
-
-
 .artworks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
+  width: 100%;
+  margin: 0 auto;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+  gap: 2rem;
 }
-
+.no-artwork {
+  text-align: center;
+}
 .artwork-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background: #fff;
+  width: 390px;
+  border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 9px -3px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 2px 2px 9px -3px rgba(0, 0, 0, 0.38);
+  box-shadow: 2px 2px 9px -3px rgba(0, 0, 0, 0.38);
+  padding: 0.5rem;
+  align-items: center;
 }
 
-.artwork-image {
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: cover;
+.artwork-card mat-card-title {
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-family: "Lora", serif;
+  color: #073858;
 }
 
 .card-textos {
   display: flex;
   flex-direction: column;
-  gap: 5px; /* Espaçamento entre os elementos */
+  align-items: baseline;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.input-lance {
-  width: 100%; /* Ocupa toda a largura do card */
-  max-width: 300px; /* Limita a largura máxima */
+.artista,
+.valor {
+  font-family: "Lora", serif;
+  margin: 0;
+  margin-top: 8px;
+  color: #073858;
 }
 
-/* Estilos para o botão */
-button {
-  align-self: center;
+.valor {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.artwork-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.card-lance {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  color: hsl(209, 73%, 33%);
+}
+.button:hover {
   color: white;
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: background-color 0.3s, transform 0.3s;
-  background-color: #073858;
+  background-color: hsl(209, 73%, 33%);
 }
-button:hover {
-  background-color: rgba(125, 211, 246, 0.78); /* Cor ao passar o mouse */
-  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+
+@media screen and (max-width: 826px) {
+  .artworks-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 360px;
+  }
 }

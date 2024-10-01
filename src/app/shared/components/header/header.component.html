@@ -1,11 +1,30 @@
 <header class="container">
-  <a href="../../../../index.html"
-    ><img src="assets/imgs/logo.png" alt="LanceArt Logo" class="logo"
-  /></a>
+  <a href="../../../../index.html">
+    <img src="assets/imgs/logo.png" alt="LanceArt Logo" class="logo" />
+  </a>
   <p class="titulopag">LanceArt</p>
+
   <nav class="header-right" aria-label="Primary">
-    <button mat-icon-button aria-label="User" routerLink="/auth/login">
+    <!-- Botão de usuário sempre visível -->
+    <button
+      mat-icon-button
+      aria-label="User"
+      [matMenuTriggerFor]="authService.isAuthenticated() ? userMenu : null"
+      [routerLink]="authService.isAuthenticated() ? null : '/auth/login'"
+    >
       <mat-icon>person</mat-icon>
     </button>
+
+    <!-- Menu do usuário (somente autenticado) -->
+    <mat-menu #userMenu="matMenu">
+      <span mat-menu-item class="userName" disabled>
+        {{ authService.getUserName() }}
+      </span>
+      <button mat-menu-item [routerLink]="'/cadastrar-nova-arte'">
+        Cadastrar Nova Arte
+      </button>
+      <button mat-menu-item [routerLink]="'/minhas-artes'">Minhas Artes</button>
+      <button mat-menu-item (click)="logout()">Sair</button>
+    </mat-menu>
   </nav>
 </header>

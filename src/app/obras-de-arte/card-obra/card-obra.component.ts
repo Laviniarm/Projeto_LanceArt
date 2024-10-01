@@ -18,6 +18,6 @@ export class CardObraComponent {
   }
 
   editar(arteAEditar: ObraDeArte) {
-    this.roteador.navigate(['editarArte', arteAEditar.id]);
+    this.roteador.navigate(['editar-arte', arteAEditar.id]);
   }
 }
