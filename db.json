@@ -55,6 +55,14 @@
       "ano": "1928",
       "valorInicial": "60000000",
       "imagem": "https://imagenes.elpais.com/resizer/v2/EXK2SCEYX6MLZE5MPTZJPOGOPQ.jpg?auth=e2e24405d1051989cd26dce86434c0137efc828b298fd1e23878e503c554495b&width=980&height=980&smart=true"
+    },
+    {
+      "id": "10",
+      "titulo": "O Bêbado",
+      "artista": "A.R.L",
+      "ano": "1958",
+      "valorInicial": "100000",
+      "imagem": "https://visitebrasilia.com.br/media/plg_jspeed/cache/images/6de7b653f2f20431356127428aa329995488b86c.webp"
     }
   ]
 }

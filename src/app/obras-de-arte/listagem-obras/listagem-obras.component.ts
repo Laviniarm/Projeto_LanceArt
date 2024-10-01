@@ -31,9 +31,9 @@ export class ListagemObrasComponent {
       this.obraDeArteService.listarPorUsuarioId(this.usuarioId).subscribe({
         next: (obraR) => {
           this.obras = obraR;
-          this.mensagemService.MensagemSucesso(
-            'Obras de arte carregadas com sucesso!'
-          );
+          // this.mensagemService.MensagemSucesso(
+          //   'Obras de arte carregadas com sucesso!'
+          // );
         },
         error: (err) => {
           console.error('Erro ao buscar obras:', err); // Adicionado tratamento de erro

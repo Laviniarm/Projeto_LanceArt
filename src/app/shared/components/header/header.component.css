@@ -4,7 +4,11 @@
   align-items: center;
   height: 15%;
   padding: 0 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   margin-bottom: 2rem;
+  border-bottom: 1px solid;
+  border-color: #073858;
 }
 .header-right {
   display: flex;
@@ -20,9 +24,6 @@
 .titulopag {
   text-align: center;
   font-size: 2rem;
-  border-bottom: 1px solid;
-  border-color: #073858;
-  padding-bottom: 16px;
   color: #073858;
 }
 
@@ -31,4 +32,11 @@
   .logo {
     width: 8rem;
   }
+}
+
+.titulopag {
+  text-align: center;
+  font-size: 24px;
+
+  color: #073858;
 }
