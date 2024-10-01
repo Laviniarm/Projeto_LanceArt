@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 #firebase key
-src/firebase.config.ts
+src/app/firestore/firebase.config.ts
