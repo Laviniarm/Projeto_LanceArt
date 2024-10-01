@@ -72,7 +72,7 @@ mat-form-field {
   width: 100%;
 }
 
-button {
+.button-container {
   display: flex;
   align-items: center;
   justify-content: center;

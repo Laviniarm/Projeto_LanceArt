@@ -61,11 +61,19 @@
         </div>
       </div>
     </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-raised-button color="Secondary" (click)="manterArte()">
-        <mat-icon>{{ editando ? "edit" : "add" }}</mat-icon>
-        {{ editando ? "Editar" : "Adicionar" }}
-      </button>
-    </mat-card-actions>
+    <div class="button-container">
+      <mat-card-actions align="end">
+        <button mat-raised-button color="Secondary" (click)="manterArte()">
+          <mat-icon>{{ editando ? "edit" : "add" }}</mat-icon>
+          {{ editando ? "Editar" : "Adicionar" }}
+        </button>
+      </mat-card-actions>
+      <mat-card-actions align="end">
+        <button mat-raised-button color="warn" routerLink="/minhas-artes">
+          <mat-icon>cancel</mat-icon>
+          Cancelar
+        </button>
+      </mat-card-actions>
+    </div>
   </mat-card>
 </div>
