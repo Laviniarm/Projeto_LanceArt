@@ -40,6 +40,10 @@ export class AuthService {
     return this.currentUser.id;
   }
 
+  getUserName() {
+    return this.currentUser.nome;
+  }
+
   isAuthenticated(): boolean {
     return !!this.currentUser;
   }
