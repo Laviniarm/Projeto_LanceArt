@@ -33,9 +33,10 @@
 }
 
 .button-container {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   right: 2rem;
+  border-color: 2px solid red;
 }
 .button {
   transform: scale(1.5);
