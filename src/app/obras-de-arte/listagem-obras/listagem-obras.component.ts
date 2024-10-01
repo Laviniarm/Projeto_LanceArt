@@ -64,6 +64,6 @@ export class ListagemObrasComponent {
   }
 
   editar(obraAEditar: ObraDeArte) {
-    this.roteador.navigate(['editarArte', obraAEditar.id]);
+    this.roteador.navigate(['editar-arte', obraAEditar.id]);
   }
 }

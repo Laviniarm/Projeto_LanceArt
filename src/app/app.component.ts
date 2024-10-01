@@ -18,11 +18,11 @@ export class AppComponent {
   }
 
   atualizarTitulo(url: string) {
-    if (url.includes('cadastrarArte')) {
+    if (url.includes('cadastrar-nova-arte')) {
       this.tituloPagina = 'Cadastro de Obra';
-    } else if (url.includes('listagemArtes')) {
+    } else if (url.includes('minhas-artes')) {
       this.tituloPagina = 'Listagem de Obras';
-    } else if (url.includes('editarArte')) {
+    } else if (url.includes('editar-arte')) {
       this.tituloPagina = 'Editar Obra';
     } else {
       this.tituloPagina = 'LanceArt';

@@ -14,12 +14,12 @@ const routes: Routes = [
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/cadastro', component: CadastroComponent },
   {
-    path: 'listagemArte',
+    path: 'minhas-artes',
     component: ListagemObrasComponent,
     canActivate: [authGuard],
   },
   {
-    path: 'cadastrarArte',
+    path: 'cadastrar-nova-arte',
     component: CadastroObrasComponent,
     canActivate: [authGuard],
   },
