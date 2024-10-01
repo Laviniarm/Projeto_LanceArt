@@ -25,7 +25,7 @@ export class AppComponent {
     } else if (url.includes('editar-arte')) {
       this.tituloPagina = 'Editar Obra';
     } else {
-      this.tituloPagina = 'LanceArt';
+      this.tituloPagina = 'Lance Art';
     }
   }
 }
